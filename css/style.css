@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+
+/*Global styles*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--main-font);
+  scroll-behavior: smooth;
+}
+
+:root {
+  --main-font: "Merriweather", serif;
+  --dark-back-ground: #252525;
+  --light-back-ground: #f8f8f8;
+  --main-font-color-dark: #252525;
+  --secondary-font-color: #e0b87c;
+}
+
+/* Start of Nav bar */
+
+header a {
+  text-decoration: none;
+}
+
+header {
+  position: relative;
+  padding: 0 20px;
+  background-color: #ecebeb;
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#brand {
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+#brand a {
+  color: var(--main-font-color-dark);
+}
+
+ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-right: 200px;
+}
+
+ul a {
+  color: var(--main-font-color-dark);
+}
+
+ul li {
+  padding: 10px;
+  margin-left: 20px;
+  font-size: 1rem;
+}
+
+ul li:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+#hamburger-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+}
+
+#hamburger-icon div {
+  width: 35px;
+  height: 3px;
+  background-color: var(--main-font-color-dark);
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--light-back-ground);
+  color: #000;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: calc(100vh - 50px);
+  width: 100%;
+}
+
+.mobile-menu li {
+  margin-bottom: 10px;
+}
+
+/* Section Showcase */
+
+#showcase {
+  /* min-height: 450px; */
+  height: 100vh;
+  color: #fff;
+  text-align: center;
+}
+
+#showcase .bg-image {
+  position: absolute;
+  /* top:10%;  */
+  background: var(--dark-back-ground) url("../img/plants.jpg");
+  background-position: center;
+  background-position-y: 10%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-position: 0% 50%;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.showcase-text {
+  display: flex;
+  flex-direction: column;
+  /* padding:0 20px;
+      padding-top:120px; */
+  padding: 120px 0 0px 50px;
+
+  /* animation */
+  animation: fadein 4s;
+  -moz-animation: fadein 4s; /* Firefox */
+  -webkit-animation: fadein 4s; /* Safari and Chrome */
+  -o-animation: fadein 4s; /* Opera */
+}
+
+
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-moz-keyframes fadein { /* Firefox */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-o-keyframes fadein { /* Opera */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* End  of animation */
+
+#showcase h1 {
+  padding-top: 50px;
+  font-size: 4rem;
+  padding-bottom: 0;
+  color: var(--main-font-color-dark);
+  text-align: left;
+}
+
+#showcase p {
+  color: var(--main-font-color-dark);
+  padding: 50px 10px 0 10px;
+  font-weight: bold;
+  line-height: 30px;
+  font-size: 20px;
+  text-align: left;
+  text-overflow: wrap;
+}
+
+#showcase span {
+  color: #ac916a;
+}
+
+#showcase .content-wrap,
+#section-a .content-wrap {
+  padding: 0 1.5em;
+}
+
+
+
+
+@media only screen and (max-width: 767.98px) {
+  header nav {
+    display: none;
+  }
+
+  #hamburger-icon {
+    display: block;
+  }
+
+  ul {
+    padding-right: initial;
+  }
+  ul li {
+    padding: 10px;
+    margin-left: 20px;
+    font-size: 1.5rem;
+  }
+
+  #showcase .bg-image {
+    position: absolute;
+    /* top:10%;  */
+  background: var(--dark-back-ground) url("../img/plants.jpg");
+    background-position: center;
+    background-position-y: -90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-position: 0% 50%;
+    width: 100%;
+    height: 50vh;
+    z-index: -1;
+    opacity: 0.3;
+  }
+
+  #showcase h1 {
+
+    padding: 40px 10px 10px 10px;
+
+    font-size: 0.2rem;
+  }
+
+  #showcase p {
+    padding: 5px 15px 0px 15px;
+    
+    font-weight: bold;
+    line-height: 30px;
+    font-size: 0.77rem;
+    /* line-height: 21px; */
+    /* text-align:left; */
+  }
+
+  .showcase-text {
+    display: flex;
+    flex-direction: column;
+    padding: 110px 10px 0px 20px;
+  }
+}
+@media (max-width: 991.98px) { 
+
+    #showcase .bg-image {
+    
+        width: 100%;
+        height: 50vh;
+
+
+ }
+
+
+/*  Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  #showcase .bg-image {
+    position: absolute;
+    /* top:10%;  */
+  background: var(--dark-back-ground) url("../img/plants.jpg");
+    background-position: center;
+    background-position-y: 15%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-position: 0% 50%;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.3;
+  }
+  #showcase h1 {
+    padding-top: 100px;
+    font-size: 2.5rem;
+  }
+}
+}
