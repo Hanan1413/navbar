@@ -1,5 +1,11 @@
 
-// Mobile menu functionn 
-function toggleMobileMenu(menu) {
-    menu.classList.toggle('open');
-}
+// get  hamburgerIcon
+
+const hamburgerIcon = document.getElementById("hamburger-icon");
+
+// on click toggle navbar
+hamburgerIcon.addEventListener("click", toggleNavBar);
+
+function toggleNavBar() {
+    hamburgerIcon.classList.toggle('open');
+  }
